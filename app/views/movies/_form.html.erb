@@ -16,9 +16,10 @@
     <%= form.text_field :title %>
   </div>
 
+  <% # changed with a selection %>
   <div class="field">
-    <%= form.label :rating %>
-    <%= form.text_field :rating %>
+    <%= form.label :rating %><br>
+    <%= form.select :rating, ['G','PG','PG-13','R','NC-17'] %>
   </div>
 
   <div class="field">
@@ -26,9 +27,10 @@
     <%= form.text_area :description %>
   </div>
 
+  <% # modified start years %>
   <div class="field">
     <%= form.label :release_date %>
-    <%= form.date_select :release_date %>
+    <%= form.date_select :release_date, start_year: 1930 %>
   </div>
 
   <div class="actions">
