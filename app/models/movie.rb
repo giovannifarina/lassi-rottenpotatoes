@@ -1,5 +1,7 @@
 class Movie < ApplicationRecord
 
+    has_many :reviews
+
     before_save :capitalize_title
 
     @@grandfathered_date = Date.parse('1 Nov 1968')
