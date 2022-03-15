@@ -1,24 +1,5 @@
-# README
+# RottenPotatoes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a preliminar implementation of the RottenPotatoes Rails' App based the repositories of [Engineering Software as a Service](https://github.com/saasbook)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Follows the commands reported in [commands.txt](commands.txt) to set up the environment
