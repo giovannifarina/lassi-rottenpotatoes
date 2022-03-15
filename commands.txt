@@ -3,4 +3,4 @@ bin/rake webpacker:install
 #bin/rails generate scaffold Movie title:string rating:string description:text release_date:date
 bin/rake db:migrate
 bin/rake db:seed
-#bin/rails generate migration CreateReviews potatoes:interger movie:belongs_to ...
+#bin/rails generate migration CreateReviews potatoes:interger comments:text movie:belongs_to
