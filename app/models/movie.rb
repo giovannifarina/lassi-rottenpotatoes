@@ -24,7 +24,7 @@ class Movie < ApplicationRecord
 
     # model validation
 
-	validates :title, :presence => true
+	validates :title, :presence => true, uniqueness: { case_sensitive: false }
 	validates :release_date, :presence => true
 	validate :released_1930_or_later # uses custom validator below
 	validates :rating, :inclusion => {:in => Movie.all_ratings},
