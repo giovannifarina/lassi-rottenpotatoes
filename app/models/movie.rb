@@ -30,5 +30,4 @@ class Movie < ApplicationRecord
 	validates :rating, :inclusion => {:in => Movie.all_ratings},
 		:unless => :grandfathered?
 
-
 end
