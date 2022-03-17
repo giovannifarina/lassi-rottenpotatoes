@@ -9,7 +9,7 @@ class MoviegoersController < ApplicationController
 	end
 	
 	def new
-		#default rendering
+		@moviegoer = Moviegoer.new
 	end
 	
 	def create
