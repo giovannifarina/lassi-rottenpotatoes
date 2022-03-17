@@ -20,14 +20,6 @@ class MoviegoersController < ApplicationController
 			render :new, status: :unprocessable_entity
 		end
 	end
-	
-	def destroy
-		id = params[:id]
-		@moviegoer = Moviegoer.find(id)
-		@moviegoer.destroy
-		flash[:notice] = "#{@moviegoer.name} has been deleted."
-		redirect_to moviegoers_path
-	end
 
 	private
 
