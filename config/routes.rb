@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root "movies#index"
-  resources :movies
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :movies do
+		resources :reviews, only: [:new, :show, :create]
+	end
+  resources :moviegoers, only: [:index, :new, :show, :create]
+  
 end
