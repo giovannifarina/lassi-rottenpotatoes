@@ -13,7 +13,6 @@
     </div>
 
     <div class="field">
-      <% # not so clean %>
       <%= form.label :moviegoer_id, 'Moviegoer' %><br>
       <%= form.select :moviegoer_id, @moviegoers.collect { |moviegoer| [ moviegoer.name, moviegoer.id] } %>
 
