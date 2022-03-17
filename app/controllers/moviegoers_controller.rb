@@ -13,9 +13,12 @@ class MoviegoersController < ApplicationController
 	end
 	
 	def create
-		@moviegoer = Moviegoer.create!(params[:moviegoer].permit(:name))
-		flash[:notice] = "#{@moviegoer.name} was successfully created."
-		redirect_to moviegoers_path
+		@moviegoer = Moviegoer.new(moviegoer_params)
+		if @moviegoer.save
+			redirect_to @moviegoer, notice: "Moviegoer was successfully created." 
+		else
+			render :new, status: :unprocessable_entity
+		end
 	end
 	
 	def destroy
@@ -24,5 +27,11 @@ class MoviegoersController < ApplicationController
 		@moviegoer.destroy
 		flash[:notice] = "#{@moviegoer.name} has been deleted."
 		redirect_to moviegoers_path
+	end
+
+	private
+
+	def moviegoer_params
+		params.require(:moviegoer).permit(:name)
 	end
 end

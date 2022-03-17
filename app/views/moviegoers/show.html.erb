@@ -4,7 +4,7 @@
 
 <h3> Movies reviewed so far </h3>
   <% if  @moviegoer.reviews.empty? %>
-    <p> No reviews for this user... </p>
+    <p> No reviews for this moviegoer... </p>
   <% else %>
     <ul>
     <%  @moviegoer.movies.each do |movie|  %>

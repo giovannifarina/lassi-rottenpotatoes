@@ -1,0 +1,25 @@
+<h1>Add Review to <%= @movie.title %></h1>
+
+<%= form_with model: [ @movie, @review ] do |form| %>
+
+    <div class="field">
+      <%= form.label :potatoes, 'Votes' %><br>
+      <%= form.select :potatoes, [1,2,3,4,5] %>
+    </div>
+
+    <div class="field">
+      <%= form.label :comments, 'Comment' %>
+      <%= form.text_area:comments %>
+    </div>
+
+    <div class="field">
+      <% # not so clean %>
+      <%= form.label :moviegoer_id, 'Moviegoer' %><br>
+      <%= form.select :moviegoer_id, @moviegoers.collect { |moviegoer| [ moviegoer.name, moviegoer.id] } %>
+
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Add review" %>
+    </div>
+  <% end %>

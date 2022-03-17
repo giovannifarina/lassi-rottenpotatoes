@@ -79,6 +79,9 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    haml (5.2.2)
+      temple (>= 0.8.0)
+      tilt
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -202,6 +205,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -235,6 +239,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   debase (= 0.2.5.beta2)
+  haml
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)
