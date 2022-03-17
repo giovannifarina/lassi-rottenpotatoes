@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Moviegoers</h1>
+
+<ul>
+  <%  @moviegoers.each do |moviegoer|  %>
+    <li> <%= link_to moviegoer.name, moviegoer  %> </li>
+  <% end %>
+</ul>
