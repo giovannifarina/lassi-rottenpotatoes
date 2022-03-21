@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# adding some movies
 more_movies = [
     {:title => 'Aladdin', :rating => 'G',
       :release_date => '25-Nov-1992'},
@@ -20,6 +14,7 @@ more_movies.each do |movie|
   Movie.create!(movie)
 end
 
+# adding some moviegoers
 more_moviegoer = [
 	{:name => 'Mario'},
 	{:name => 'Anna'},
@@ -28,4 +23,24 @@ more_moviegoer = [
 
 more_moviegoer.each do |moviegoer|
   Moviegoer.create!(moviegoer)
+end
+
+# adding some reviews
+more_reviews = [
+	{:potatoes => 2, :comments => 'Some parts are boring'},
+	{:potatoes => 5, :comments => 'Cool!'},
+	{:potatoes => 3, :comments => 'Nothing to say'},
+  {:potatoes => 1},
+  {:potatoes => 1},
+  {:potatoes => 4, :comments => 'Nice Movie!'},
+]
+
+# random assignment
+movie_counter = Movie.all.size
+moviegoer_counter = Moviegoer.all.size
+more_reviews.each do |review|
+  r = Review.new(review)
+  r.movie = Movie.find(rand(1..movie_counter))
+  r.moviegoer = Moviegoer.find(rand(1..moviegoer_counter))
+  r.save
 end
