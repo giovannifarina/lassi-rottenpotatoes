@@ -30,4 +30,16 @@ class Movie < ApplicationRecord
 	#validates :rating, :inclusion => {:in => Movie.all_ratings},
 	#	:unless => :grandfathered?
 
+    def avg_reviews
+		sum = 0
+		self.reviews.each do |review|
+			sum = sum + review.potatoes
+		end
+		if self.reviews.count>0
+			return sum/self.reviews.count
+		else
+			return "--"
+		end
+	end
+
 end
