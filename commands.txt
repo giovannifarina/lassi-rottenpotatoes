@@ -6,3 +6,4 @@ bin/rake db:seed
 #bin/rails generate migration CreateMoviegoers name:string
 #bin/rails generate migration CreateReviews potatoes:interger comments:text movie:belongs_to moviegoer:belongs_to
 #wsl.exe -t <DistroName> # restart distro WSL
+#yarn add bootstrap jquery popper.js
