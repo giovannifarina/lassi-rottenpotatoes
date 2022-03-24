@@ -27,7 +27,19 @@ class Movie < ApplicationRecord
 	validates :title, :presence => true, uniqueness: { case_sensitive: false }
 	validates :release_date, :presence => true
 	validate :released_1930_or_later # uses custom validator below
-	validates :rating, :inclusion => {:in => Movie.all_ratings},
-		:unless => :grandfathered?
+	#validates :rating, :inclusion => {:in => Movie.all_ratings},
+	#	:unless => :grandfathered?
+
+    def avg_reviews
+		sum = 0
+		self.reviews.each do |review|
+			sum = sum + review.potatoes
+		end
+		if self.reviews.count>0
+			return sum/self.reviews.count
+		else
+			return "--"
+		end
+	end
 
 end
