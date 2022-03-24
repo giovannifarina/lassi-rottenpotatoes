@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
+    render('movie', movie: @movie) if request.xhr?
   end
 
   # GET /movies/new
