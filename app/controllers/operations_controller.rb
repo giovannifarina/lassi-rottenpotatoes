@@ -6,6 +6,7 @@ class OperationsController < ApplicationController
         else
             @message = 'Failed'
         end
+        render "operations/trigger"
     end
 
     def bootstrap
